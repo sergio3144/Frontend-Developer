@@ -7,6 +7,11 @@ $paddingPage: 0px 120px 0 120px;
 @mixin margin ($margin){
     margin: $margin;
 }
+@mixin hover ($backgroud, $color, $transition) {
+        background-color: $backgroud;
+        color: $color;
+        transition: $transition;
+}
 * {
     margin: 0;
     padding: 0;
@@ -70,6 +75,9 @@ header {
                 font-size: 14px;
                 cursor: pointer;
             }
+            .btnIniciar:hover {
+                @include hover($colorDeveloper, $colorText, 350ms all)
+            }
         }
     }
     
@@ -110,6 +118,9 @@ header {
         border: none;
         border-radius: 2px;
     }
+    .btnInscribir:hover {
+        @include hover($colorDeveloper, $colorText, 350ms all)
+    }
 }
 /* FIN SECTION FORMULARIO */
 
@@ -128,6 +139,7 @@ header {
         border-radius: 4px;
         .svg-logo {
             width: 50px;
+            filter: invert(50) sepia(100) hue-rotate(20deg);
         }
         .title {
             margin: 10px 0 10px 0;
@@ -149,6 +161,9 @@ header {
             background-color: $colorSecundario;
             color: $colorText;
         }
+        .btn-leer:hover {
+            @include hover($colorDeveloper, $colorText, 350ms all)
+        }
     }
 }
 .card:nth-last-child(2) {
@@ -156,6 +171,133 @@ header {
 }
 
 /* FIN SECCION CARTAS */
+
+/* SECCION DE FUNDAMENTOS */
+.container-fundaments {
+    display: flex;
+    justify-content: space-between;
+    padding: $paddingPage;
+    margin-top: 70px;
+    .container-parrafos {
+        max-width: 700px;
+        margin: 60px 0 0 90px;
+    }
+    .img-fundaments {
+        width: 400px;
+    }
+    .title-fundaments {
+        margin: -50px 0 20px 0;
+        letter-spacing: 0.8px;
+    }
+    .p-fundaments {
+        margin-bottom: 10px;
+        line-height: 20px;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .btn-leerMas {
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: $colorSecundario;
+        color: $colorText;
+        .flecha {
+            width: 10px;
+            margin-left: 5px;
+            filter: invert(50) sepia(100) hue-rotate(20deg);
+        }
+    }
+    .btn-leerMas:hover {
+        @include hover($colorDeveloper, $colorText, 350ms all)
+    }
+}
+/* FIN SECCION DE FUNDAMENTOS */
+
+/* SECCION DE PREGUNTAS */
+.question-container {
+    padding: $paddingPage;
+    margin-top: 50px;
+}
+.container-questions {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    padding: 8px;
+    margin-top: -30px;
+    border-radius: 4px;
+    cursor: pointer;
+    .question {
+        font-size: 18px;
+    }
+    .row {
+        width: 13px;
+        height: 13px;
+        margin-top: 5px;
+    }
+    /* .row:active {
+        transform: rotate(90deg);
+        transition: 300ms all;
+    } */
+}
+.container-questions:hover {
+    background-color: #e0edff;
+}
+.respuesta {
+    display: none;
+}
+/* FIN SECCION DE LAS PREGUNTAS */
+
+/* CLASE ACTIVO PARA ACTIVAR EL MENU */
+.active-respuesta {
+    display: block;
+    margin: 10px 0 0 20px;
+    font-weight: bold;
+    opacity: 0.6;
+}
+.active-flecha {
+    transform: rotate(90deg);
+    transition: 360ms all;
+}
+/* FIN CLASE ACTIVO */
+
+/* SECCION INSTRUCTORES */
+.main {
+    background-color: $colorSecundario;
+    .instructors {
+        display: flex;
+        margin-top: 30px;
+        padding: $paddingPage;
+        .card-instrctors {
+            text-align: center;
+            background-color: $colorText;
+            margin: 20px;
+            border-radius: 9px;
+            padding: 10px;
+        }
+        .redes-icon {
+            width: 30px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .img-responsive {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .card-title {
+            padding: 5px 0 5px 0;
+            font-size: 23px;
+            font-weight: bold;
+        }
+        p {
+            opacity: 0.9;
+            padding: 5px 0 10px 0;
+        }
+    }
+}
 
 /* PARA DISPOCITIVOS MOVILES */
 @media(max-width: 1200px) {
@@ -186,8 +328,44 @@ header {
         padding: 5px;
         margin-top: 50px;
     }
+    .container-fundaments {
+        display: block;
+        flex-wrap: wrap;
+        padding: 10px;
+        text-align: center;
+        .container-parrafos {
+            margin: 0 auto;
+            margin-top: 80px;
+            max-width: 600px;
+        }
+    }
+    .question-container {
+        padding: 0 20px 0 20px;
+        text-align: center;
+        .respuesta {
+            text-align: left;
+        }
+    } 
+    .main {
+        .instructors  {
+            padding: 2px;
+            margin: 0 auto;
+        }
+    }
 }
 
+@media(max-width: 1011px) {
+    .container-cards {
+        flex-wrap: wrap;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .card {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
 @media(max-width: 600px) {
     .img-info {
         max-width: 250px;
@@ -211,16 +389,18 @@ header {
             list-style: disc;
         }
     }
-}
-@media(max-width: 1011px) {
-    .container-cards {
-        flex-wrap: wrap;
-        max-width: 400px;
-        margin: 0 auto;
-        margin-top: 50px;
+    .container-fundaments {
+        .img-fundaments {
+            width: 250px;
+        }
     }
-    .card {
-        margin: 0 auto;
-        margin-top: 20px;
+    .question-container {
+        .question {
+            font-size: 15px;
+        }
+        .respuesta {
+            font-size: 13px;
+            text-align: left;
+        }
     }
 }

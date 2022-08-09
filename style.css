@@ -64,6 +64,11 @@ header .container-information .information .btnIniciar {
   font-size: 14px;
   cursor: pointer;
 }
+header .container-information .information .btnIniciar:hover {
+  background-color: #ffb511;
+  color: white;
+  transition: 350ms all;
+}
 
 .img-info {
   width: 400px;
@@ -100,6 +105,11 @@ header .container-information .information .btnIniciar {
   border: none;
   border-radius: 2px;
 }
+.formularioUser .btnInscribir:hover {
+  background-color: #ffb511;
+  color: white;
+  transition: 350ms all;
+}
 
 /* FIN SECTION FORMULARIO */
 /* SECCION CARTAS USUARIOS */
@@ -119,6 +129,7 @@ header .container-information .information .btnIniciar {
 }
 .container-cards .card .svg-logo {
   width: 50px;
+  filter: invert(50) sepia(100) hue-rotate(20deg);
 }
 .container-cards .card .title {
   margin: 10px 0 10px 0;
@@ -140,12 +151,151 @@ header .container-information .information .btnIniciar {
   background-color: #0d6efd;
   color: white;
 }
+.container-cards .card .btn-leer:hover {
+  background-color: #ffb511;
+  color: white;
+  transition: 350ms all;
+}
 
 .card:nth-last-child(2) {
   background-color: #6c757e;
 }
 
 /* FIN SECCION CARTAS */
+/* SECCION DE FUNDAMENTOS */
+.container-fundaments {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 120px 0 120px;
+  margin-top: 70px;
+}
+.container-fundaments .container-parrafos {
+  max-width: 700px;
+  margin: 60px 0 0 90px;
+}
+.container-fundaments .img-fundaments {
+  width: 400px;
+}
+.container-fundaments .title-fundaments {
+  margin: -50px 0 20px 0;
+  letter-spacing: 0.8px;
+}
+.container-fundaments .p-fundaments {
+  margin-bottom: 10px;
+  line-height: 20px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.container-fundaments .btn-leerMas {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #0d6efd;
+  color: white;
+}
+.container-fundaments .btn-leerMas .flecha {
+  width: 10px;
+  margin-left: 5px;
+  filter: invert(50) sepia(100) hue-rotate(20deg);
+}
+.container-fundaments .btn-leerMas:hover {
+  background-color: #ffb511;
+  color: white;
+  transition: 350ms all;
+}
+
+/* FIN SECCION DE FUNDAMENTOS */
+/* SECCION DE PREGUNTAS */
+.question-container {
+  padding: 0px 120px 0 120px;
+  margin-top: 50px;
+}
+
+.container-questions {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(206, 206, 206);
+  padding: 8px;
+  margin-top: -30px;
+  border-radius: 4px;
+  cursor: pointer;
+  /* .row:active {
+      transform: rotate(90deg);
+      transition: 300ms all;
+  } */
+}
+.container-questions .question {
+  font-size: 18px;
+}
+.container-questions .row {
+  width: 13px;
+  height: 13px;
+  margin-top: 5px;
+}
+
+.container-questions:hover {
+  background-color: #e0edff;
+}
+
+.respuesta {
+  display: none;
+}
+
+/* FIN SECCION DE LAS PREGUNTAS */
+/* CLASE ACTIVO PARA ACTIVAR EL MENU */
+.active-respuesta {
+  display: block;
+  margin: 10px 0 0 20px;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.active-flecha {
+  transform: rotate(90deg);
+  transition: 360ms all;
+}
+
+/* FIN CLASE ACTIVO */
+/* SECCION INSTRUCTORES */
+.main {
+  background-color: #0d6efd;
+}
+.main .instructors {
+  display: flex;
+  margin-top: 30px;
+  padding: 0px 120px 0 120px;
+}
+.main .instructors .card-instrctors {
+  text-align: center;
+  background-color: white;
+  margin: 20px;
+  border-radius: 9px;
+  padding: 10px;
+}
+.main .instructors .redes-icon {
+  width: 30px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.main .instructors .img-responsive {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.main .instructors .card-title {
+  padding: 5px 0 5px 0;
+  font-size: 23px;
+  font-weight: bold;
+}
+.main .instructors p {
+  opacity: 0.9;
+  padding: 5px 0 10px 0;
+}
+
 /* PARA DISPOCITIVOS MOVILES */
 @media (max-width: 1200px) {
   header {
@@ -175,6 +325,40 @@ header .container-information .information .btnIniciar {
     padding: 5px;
     margin-top: 50px;
   }
+  .container-fundaments {
+    display: block;
+    flex-wrap: wrap;
+    padding: 10px;
+    text-align: center;
+  }
+  .container-fundaments .container-parrafos {
+    margin: 0 auto;
+    margin-top: 80px;
+    max-width: 600px;
+  }
+  .question-container {
+    padding: 0 20px 0 20px;
+    text-align: center;
+  }
+  .question-container .respuesta {
+    text-align: left;
+  }
+  .main .instructors {
+    padding: 2px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1011px) {
+  .container-cards {
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .card {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }
 @media (max-width: 600px) {
   .img-info {
@@ -195,16 +379,14 @@ header .container-information .information .btnIniciar {
   .list .list-items {
     list-style: disc;
   }
-}
-@media (max-width: 1011px) {
-  .container-cards {
-    flex-wrap: wrap;
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 50px;
+  .container-fundaments .img-fundaments {
+    width: 250px;
   }
-  .card {
-    margin: 0 auto;
-    margin-top: 20px;
+  .question-container .question {
+    font-size: 15px;
+  }
+  .question-container .respuesta {
+    font-size: 13px;
+    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */
