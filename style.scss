@@ -177,7 +177,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: $paddingPage;
-    margin-top: 70px;
+    margin: 100px 0 100px 0;
     .container-parrafos {
         max-width: 700px;
         margin: 60px 0 0 90px;
@@ -265,16 +265,21 @@ header {
 /* SECCION INSTRUCTORES */
 .main {
     background-color: $colorSecundario;
+    padding: 0px 0 50px 0;
     .instructors {
         display: flex;
+        justify-content: center;
+        margin: 0 auto;
         margin-top: 30px;
-        padding: $paddingPage;
+        text-align: center;
+        padding: 0 30px 0 30px;
         .card-instrctors {
             text-align: center;
             background-color: $colorText;
             margin: 20px;
             border-radius: 9px;
             padding: 10px;
+            max-width: 300px;
         }
         .redes-icon {
             width: 30px;
@@ -298,7 +303,45 @@ header {
         }
     }
 }
-
+/* FIN SECCION INSTRUCTORES */
+/* FOOTER */
+.contact {
+    text-align: center;
+    background-color: #212429;
+    padding-top: 50px;
+    color: $colorText;
+    h1 {
+        margin-bottom: 30px;
+        font-size: 26px;
+        letter-spacing: 2px;
+        color: #ffb511;
+    }
+    .contact-footer {
+        margin: 0 auto;
+        h4 {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            span {
+                opacity: 0.6;
+                margin-left: 10px;
+                color: #ffb511;
+            }
+        }
+    }
+}
+.copyright {
+    background-color: #212429;
+    padding: 60px 0 20px 0;
+    h2 {
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: $colorText;
+        text-align: center;
+        opacity: 0.6;
+    }
+}
+/* FIN  FOOTER */
 /* PARA DISPOCITIVOS MOVILES */
 @media(max-width: 1200px) {
     header {
@@ -347,9 +390,15 @@ header {
         }
     } 
     .main {
+        margin-top: 50px;
+        .div-text {
+            padding: 5px;
+        }
         .instructors  {
             padding: 2px;
             margin: 0 auto;
+            max-width: 1000px;
+            flex-wrap: wrap;
         }
     }
 }
@@ -366,7 +415,7 @@ header {
         margin-top: 20px;
     }
 }
-@media(max-width: 600px) {
+@media(max-width: 650px) {
     .img-info {
         max-width: 250px;
         width: auto;
@@ -401,6 +450,13 @@ header {
         .respuesta {
             font-size: 13px;
             text-align: left;
+        }
+    }
+    .contact {
+        .contact-footer {
+            h4 {
+                font-size: 12px;
+            }
         }
     }
 }
